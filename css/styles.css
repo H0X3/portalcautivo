@@ -93,7 +93,7 @@ background: #9FDE32;
 .feature a {
 display: inline-block;
 font-size: 18px;
-color: #fff;
+color: rgb(0, 0, 0);
 background: #FFDF00;
 margin-right: 20px;
 width: 220px;
