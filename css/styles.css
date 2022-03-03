@@ -26,18 +26,18 @@ body {
 }
 
 .pinta{
-	color:#FFDF00;
-	background:#FFDF00;
+	color:#e76935;
+	background:#e76935;
 }
 
 ::selection {
 	color: #fff;
-	background: #FFDF00;
+	background: #e76935;
 }
 
 ::-moz-selection {
  color: #fff;
- background: #FFDF00;
+ background: #e76935;
 }
 p {
 	color: #858585;
@@ -94,7 +94,7 @@ background: #9FDE32;
 display: inline-block;
 font-size: 18px;
 color: rgb(0, 0, 0);
-background: #FFDF00;
+background: #e76935;
 margin-right: 20px;
 width: 220px;
 text-align: center;
@@ -121,7 +121,7 @@ background: transparent;
 }
 .btn {
 	color:#000;
-	background: #FFDF00;
+	background: #e76935;
 }
 .btn:hover {
 	 color:#444 !important;
@@ -156,7 +156,7 @@ padding: 8px 12px;
 	background: #fff;
 	font-size: inherit;
 	border-radius: 0px !important;
-	border: 1px solid #FEDE00;
+	border: 1px solid #e76935;
 	width: 99%;
 }
 .button-outline {
@@ -177,7 +177,7 @@ padding: 8px 12px;
 	background: rgba(255,255,255,0.35);
 }
 a {
-	color: #FFDF00;
+	color: #e76935;
 	text-decoration: none;
 	text-shadow: none;
 	-webkit-transition: all 0.2s linear;
@@ -195,7 +195,7 @@ a:hover {
 	border-radius: 0px;
 }
 .btn-primary {
-	background: #FFDF00;
+	background: #e76935;
 }
 .form-control {
 	border-radius: 0px;
@@ -205,7 +205,7 @@ a:hover {
 }
 .copyright {
 	color: #000;
-	background: #ffb000;
+	background: #e76935;
 	padding: 20px 0;
 }
 .copyright a{
@@ -276,14 +276,14 @@ color:#F89F9F;
 	background: transparent;
 }
 .navbar-inverse .navbar-toggle {
-	background-color: #FFDF00;
+	background-color: #e76935;
 }
 .navbar-inverse .navbar-toggle .icon-bar {
-/*background-color: #FFDF00;*/
+/*background-color: #e76935;*/
  
 }
 .navbar-inverse .navbar-toggle:hover, .navbar-inverse .navbar-toggle:focus {
-	background: #FFDF00;
+	background: #e76935;
 }
 .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
 	color: #fff;
@@ -312,7 +312,7 @@ background: rgb(34, 34, 34);
 /*.carousel-inner*/
 #myCarousel {
 	margin-top: 50px;
-	border-bottom: 4px solid #FFDF00;
+	border-bottom: 4px solid #e76935;
 }
 .carousel-inner > .item {
 }
@@ -339,7 +339,7 @@ background: rgb(34, 34, 34);
 }
 .actionPanel {
 	padding: 25px 0;
-	background: #FFDF00;
+	background: #e76935;
 }
 .actionPanel h3 {
 	margin: 0px;
@@ -348,7 +348,7 @@ background: rgb(34, 34, 34);
 	height: 90px;
 	width: 90px;
 	border-radius: 0px;
-	color: #FFDF00;
+	color: #e76935;
 	line-height: 90px !important;
 }
 #section-strapline {
@@ -363,7 +363,7 @@ background: rgb(34, 34, 34);
 	line-height: 18px;
 }
 .navbar-brand b {
-	color: #FFDF00;
+	color: #e76935;
 	font-family: 'Oswald', sans-serif;
 	font-weight: 900;
 }
@@ -390,13 +390,12 @@ padding: 0px 15px;
 }
 .hero-text2 h2{
 	font-size: 28px;
-	c
 	line-height: 36px; 
-	text-align: left
+	text-align: center;
 }
 .hero-text2 .btn-apply{
 margin-top: 39px;
-margin-left: 30px;
+margin-left: 0px;
 padding: 15px 46px;
 font-size: 20px;
 color: #000;
@@ -416,15 +415,15 @@ color: #000;
 	font-weight: 400;
 }
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-	color: #FFDF00;
+	color: #e76935;
 	background: none;
-	border-bottom: 2px solid #FFDF00;
+	border-bottom: 2px solid #e76935;
 	border-radius: 0px;
 }
 .navbar-inverse .navbar-nav > .active {
 }
 .navbar-nav > li:hover > a {
-	color: #FFDF00;
+	color: #e76935;
 }
 .header .navbar-nav > li > a {
 	padding: 25px 18px;
@@ -446,7 +445,7 @@ color: #000;
 	font-weight: 200;
 }
 .page-section h2 {
-	color: #FFDF00;
+	color: #e76935;
 }
 .page-section p {
 	font-size: 15px;
@@ -456,7 +455,7 @@ color: #000;
 	background: #000;
 }
 .darkBg .fa {
-	color: #FFDF00;
+	color: #e76935;
 }
 /*--- Banner ----*/
 .banner-container {
@@ -465,7 +464,7 @@ color: #000;
 	/*background: url("../images/banner-bg.jpg") no-repeat;*/
 	background-size: cover;
 	position: relative;
-	border-bottom: 2px #FFDF00 solid;
+	border-bottom: 2px #e76935 solid;
 }
 .banner-container:before {
 position: absolute;
@@ -560,7 +559,7 @@ a.arrow-link:hover {
 }
 .heading {
 	padding: 3px 10px;
-	padding-bottom: 15px;
+	padding-bottom: 0px;  /* Cambio Sobre Hiz */
 	margin-bottom: 30px;
 	display: block;
 }
@@ -592,7 +591,7 @@ a.arrow-link:hover {
 	margin: 3px;
 	cursor: pointer;
 	box-shadow: 1px 1px 1px rgba(0,0,0,0.1) inset, 1px 1px 1px rgba(255,255,255,0.1);
-	border: 2px solid #FFDF00;
+	border: 2px solid #e76935;
 }
 img, video, iframe, embed, object {
 	max-width: 100%;
@@ -793,7 +792,7 @@ left: 2px;
 }
 #contactUs .btn {
 	border-radius: 0px !important;
-	background: #FFDF00;
+	background: #e76935;
 }
 .descrition {
 	min-height: 90px; 
@@ -845,7 +844,7 @@ color:#fff;
 	text-transform: uppercase;
 }
 #portfolio .filters li a, #portfolio .filters li a:hover, #portfolio .filters li a:focus {
-	color: #FFDF00;
+	color: #e76935;
 }
 #portfolio .filters li a.active {
 	color:#fff !important;
@@ -911,11 +910,11 @@ nav#filter li {
 nav#filter a {
 	padding: 4px 12px;
 	line-height: 20px;
-	border: 1px solid #FFDF00;
+	border: 1px solid #e76935;
 	text-decoration: none;
 }
 .current {
-	background: #FFDF00;
+	background: #e76935;
 	color: #fff;
 } 
 .page-section.intro {
@@ -1002,7 +1001,7 @@ footer {
 .social a {
 	font-size: 32px;
 	margin: 0 10px;
-	color: #FFDF00;
+	color: #e76935;
 }
 .contact ul li {
 	margin-bottom: 10px;
@@ -1065,7 +1064,7 @@ border-radius: 0px;
 border: 1px solid #2D2D2D;
 }
 footer .col.col-social-icons i:hover{
-color:#FFDF00;
+color:#e76935;
 }
 footer input.form-control{
 	padding: 18px 10px;
@@ -1354,8 +1353,20 @@ background: rgb(34, 34, 34);
 height: auto !important;
 }
 }
+/* LOGO CAMBIO	  */
+.cambio{
+	background: url("https://i.ibb.co/7Kvj4tR/logo.png");
+	width: 174px;
+	height: 53px;
+}
 
 @media (max-width: 480px) {
+	.cambio{
+		background: transparent !important;
+	}
+	.header .navbar {
+		background: none !important;
+	}
 .navbar-inverse .navbar-nav > li > a { 
 font-size: 1.1em;
 padding: 6px 0px !important;
@@ -1558,7 +1569,7 @@ nav#filter li {
 	transform: scale(1.1);
 }
 .flat .plan.featured:hover li.plan-name, .flat .plan:hover li.plan-name, .flat .plan.featured.plan-name {
-	background: #FFDF00 !important;
+	background: #e76935 !important;
 }
 .customNavigation {
 	display: none;
