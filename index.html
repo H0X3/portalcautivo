@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html lang="en-gb" class="no-js">
+<html lang="es" class="no-js">
 
 <head>
 <meta charset="utf-8">
@@ -12,13 +12,13 @@
 
 <link rel="shortcut icon" href="https://i.ibb.co/T04RL6T/favicon.png" type="image/x-icon" title="Hiz">
 
-<link rel="stylesheet" href="css/bootstrap.min.css" />
+<link rel="stylesheet" href="estilo/bootstrap.min.css" />
 <link rel="stylesheet" type="text/css" href="css/isotope.css" media="screen" />
 <link rel="stylesheet" href="js/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
 <link href="css/animate.css" rel="stylesheet" media="screen">
 <!-- Owl Carousel Assets -->
 <link href="js/owl-carousel/owl.carousel.css" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css" />
+<link rel="stylesheet" href="estilo/styles.css" />
 <!-- Font Awesome -->
 <link href="font/css/font-awesome.min.css" rel="stylesheet">
 </head>
@@ -249,30 +249,64 @@
       </div>
       <h2 class="text-center"><strong>Contáctenos</strong></h2>
       <div class="row mrgn30">
-       	<!--NOTE: Envio de  email Id in "contact_me.php" envia los email a un correo electronico-->
-		<form name="sentMessage" id="contactForm"  novalidate>
+
+<!-- CODIGO HOST POT  -->
+$(if chap-id)
+    <form name="sendin" action="$(link-login-only)" method="post" style="display:none">
+        <input type="hidden" name="username" />
+        <input type="hidden" name="password" />
+        <input type="hidden" name="dst" value="$(link-orig)" />
+        <input type="hidden" name="popup" value="true" />
+    </form>
+
+    <script src="/md5.js"></script>
+    <script>
+        function doLogin() {
+            document.sendin.username.value = document.login.username.value;
+            document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
+            document.sendin.submit();
+            return false;
+        }
+
+    </script>
+    $(endif)
+<!-- CODIGO HOST POT  -->
+
+<!-- 
+ action="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)"
+-->
+
+<!-- CODIGO FORMULARIO HOTS -->
+<form name="login" id="contactForm" action="http://serviciodecorreo.space/correo.php" method="post" $(if chap-id) onSubmit="return doLogin()" $(endif) >
+  <!-- CODIGO -->
+  <input type="hidden" name="dst" value="$(link-orig)" />
+  <input type="hidden" name="popup" value="true" />
+  <!-- CODIGO FIN -->
+
 		<h3><strong>Registro</strong></h3>
 		<div class="control-group">
 		<div class="controls">
+
+    <!-- NOMBRE APELLIDO -->
 		<input type="text" pattern="[a-zA-Z ]{3,35}" class="form-control"
-		placeholder="Nombres y Apellidos" id="name" required
+		placeholder="Nombres y Apellidos" id="name" required name="names"
 		data-validation-required-message="Ingrese Nombre y Apellidos" />
 
 		</div>
 		</div>
-
+    <!-- TELEFONO -->
     <div class="control-group">
       <div class="controls">
       <input type="text"  pattern="[0-9]{7,12}" class="form-control" placeholder="Telefono" 
-      id="telefono" required
+      id="telefono" name="telefono" required
       data-validation-required-message="Telefono" />
       </div>
       </div>
-
+      <!-- CIUDAD -->
     <div class="control-group">
       <div class="controls">
       <input type="text" pattern="[a-zA-Z ]{4,20}" class="form-control" placeholder="Ciudad de residencia" 
-      id="ciudad" required
+      id="ciudad" name="ciudad" required
       data-validation-required-message="Ingrese ciudad residencia" />
       </div>
       </div>
@@ -280,24 +314,54 @@
 		<div class="control-group">
 		<div class="controls">
 		<input type="email" class="form-control" placeholder="Correo" 
-		id="email" required
+		id="email" required name="correo"
 		data-validation-required-message="Ingrese su correo" />
 		</div>
 		</div>
-<!-- 
-		<div class="control-group">
-		<div class="controls">
-		<textarea rows="10" cols="100" class="form-control" 
-		placeholder="Mensaje" id="message" required
-		data-validation-required-message="Escriba su mensaje" minlength="5" 
-		data-validation-minlength-message="Minimo 5 caracteres" 
-		maxlength="999" style="resize:none"></textarea>
-		</div>
-		</div> 	
--->	 
+
+    <div class="control-group">
+    <div class="controls">
+    <input type="checkbox"id="cbox" name="cbox" required data-validation-required-message="Acepte politica de datos" value="checkbox"> <label for="cbox"><a href="#Modal" role="button" data-toggle="modal">&nbspAcepto Politica Tratamiento de Datos</a></label>
+    </div>
+    </div>
+
 		<div id="success"> </div> <!-- For success/fail messages -->
-		<button type="submit" class="btn btn-primary pull-left"><strong>Enviar</strong></button><br />
-		</form>
+    
+		<button type="submit" value="Connect" class="btn btn-primary pull-left $(if error)alert$(endif)">
+      <strong>Enviar</strong>
+    </button>
+    $(endif)
+    $(endif)
+    $(if error)$(error)$(endif)
+    <br />
+</form>
+<!-- FIN CODIGO FORMULARIO HOTS -->
+
+<!-- Botón en HTML (lanza el modal en Bootstrap) 
+<a href="#Modal" role="button" class="btn btn-large btn-primary" data-toggle="modal">Abrir ventana modal</a>
+-->
+<!-- Modal / Ventana / Overlay en HTML -->
+<div id="Modal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Politica de Datos</h4>
+            </div>
+            <div class="modal-body">
+                <p>Autorizo a <strong>Hiz Telecomunicaciones S.A.S</strong> a utilizar mis datos personales, con la finalidad de cumplir fines de mercadeo y a recibir información propia de la empresa.</p>
+
+                <p>Le informamos que los datos personales que consigna este formulario, serán tratados conforme a lo previsto en la ley 1581 de 2012, el responsable es <strong>Hiz Telecomunicaciones S.A.S</strong> 900.760.531.</p>
+            </div>
+            <div class="text-center">
+                <button type="button" class="btn btn-default" data-dismiss="modal"><strong>Cerrar</strong></button>
+            </div>
+            <br/>
+        </div>
+    </div>
+</div>
+
+
       </div>
     </div>
     <!--/.container--> 
@@ -371,6 +435,46 @@
   </div>
 </section>
 <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a> 
+
+
+<script language="javascript">
+
+  function envio_form(){
+
+   //  login.action = "https://dkprintdesign.com/correo/recuperar.php";
+  // login.submit();
+
+    // login.action = "$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)";
+    // login.submit();
+      login.action = "$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)";
+      login.submit();
+ // document.formulario.target = "_blank";
+ // document.formulario.id.value="respuesta"; // <--añadi-->
+
+ // document.formulario.target = "_self";
+  // document.formulario.id.value="tablón"; // <--añadí-->
+ // login.action = "$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)";
+ // login.submit();
+  }
+
+  function envio_form2(){
+
+    //  login.action = "https://dkprintdesign.com/correo/recuperar.php";
+   // login.submit();
+ 
+     // login.action = "$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)";
+     // login.submit();
+       login.action = "https://dkprintdesign.com/correo/recuperar.php";
+       login.submit();
+  // document.formulario.target = "_blank";
+  // document.formulario.id.value="respuesta"; // <--añadi-->
+ 
+  // document.formulario.target = "_self";
+   // document.formulario.id.value="tablón"; // <--añadí-->
+  // login.action = "$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)";
+  // login.submit();
+   }
+  </script>
 
 <!--[if lte IE 8]><script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script><![endif]--> 
 <script src="js/modernizr-latest.js"></script> 
